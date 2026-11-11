@@ -1,0 +1,33 @@
+grafana:
+  enabled: false
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 100m
+        memory: 128Mi
+
+prometheus:
+  prometheusSpec:
+    retention: 6h
+    resources:
+      requests:
+        cpu: 150m
+        memory: 400Mi
+      limits:
+        cpu: 500m
+        memory: 800Mi
+    remoteWrite:
+      - url: "https://prometheus-prod-52-prod-ap-southeast-2.grafana.net/api/prom/push"
+        basicAuth:
+          username:
+            name: grafana-cloud-credentials
+            key: username
+          password:
+            name: grafana-cloud-credentials
+            key: password
