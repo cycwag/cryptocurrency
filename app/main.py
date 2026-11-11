@@ -177,4 +177,5 @@ def toggle_fail(state):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    # Binding to 0.0.0.0 is needed for container/network access
+    app.run(host='0.0.0.0', port=5000)  # nosec B104
