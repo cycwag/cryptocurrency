@@ -1,0 +1,8 @@
+# Trivy ignore file
+# Gunakan file ini HANYA jika perbaikan resmi (patch) belum tersedia dari vendor,
+# atau temuan adalah false positive / risiko yang sudah diterima (accepted risk).
+# Format: satu CVE ID per baris (opsional: tambahkan komentar/alasan).
+
+# zlib1g vulnerabilities (Hanya contoh fallback jika tidak di-patch via Dockerfile)
+# CVE-2026-76844
+# CVE-2026-85091
